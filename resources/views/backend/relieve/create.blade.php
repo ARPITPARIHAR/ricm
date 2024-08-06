@@ -53,7 +53,7 @@
                                     <p class="text-danger error">{{ $message }}</p>
                                 @enderror
                             </span>
-                            <p class="text-muted">{{ __("If you want to create a category, leave it blank.") }}</p>
+                            <p class="text-muted">{{ __("If you want to create a category, Don't select category.") }}</p>
                         </div>
                     </div>
 
