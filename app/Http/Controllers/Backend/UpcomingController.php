@@ -83,7 +83,7 @@ class UpcomingController extends Controller
             'venue' => 'required|string',
             'from_date' => 'required|date',
             'to_date' => 'required|date|after_or_equal:from_date',
-            'file' => 'required|file|mimes:pdf|max:2048',
+            'file' => 'nullable|file|mimes:pdf|max:2048',
         ]);
         $upcoming = Upcoming::findOrFail(decrypt($id));
         $upcoming->title = $request->title;
