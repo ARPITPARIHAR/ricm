@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Management;
 use App\Models\Page;
 use App\Models\Study;
@@ -59,8 +60,12 @@ class PageController extends Controller
 
     public function galleryDetail($slug)
     {
-        $gallery = Page::where('slug', $slug)->first();
-        return view('frontend.gallery-detail', compact('gallery'));
+        $gallery = Gallery::where('slug', $slug)->first();
+        if ($gallery) {
+            return view('frontend.gallery-detail', compact('gallery'));
+        } else {
+            abort(404);
+        }
     }
 
     public function tenders(Request $request)
