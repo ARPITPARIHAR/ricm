@@ -26,7 +26,6 @@
             <div class="card-block">
                 <form action="{{ route('sliders.update', encrypt($slider->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
                         <div class="col-sm-10">
