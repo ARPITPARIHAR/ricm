@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Client Slider'))
+@section('meta_title',__('Edit Slider'))
 
-@section('page_name',__('Client Slider'))
+@section('page_name',__('Edit Slider'))
 
-@section('page_description',__('Client Slider'))
+@section('page_description',__('Edit Slider'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Client Slider') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Edit Slider') }}</a>
     </li>
 @endsection
 @section('content')
