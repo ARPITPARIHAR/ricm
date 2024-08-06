@@ -93,7 +93,12 @@ class TrainingeventController extends Controller
         ]);
         $detail = Trainingevent::findOrFail(decrypt($id));
         $detail->title = $request->title;
-        $detail->category_id = $request->category_id ?? 0;
+        if ($request->category_id) {
+            $detail->category_id = $request->category_id;
+        } else {
+            $detail->category_id = 0;
+            $detail->pdf_file = null;
+        }
         if ($request->hasFile('pdf_file')) {
             $fileName = time() . '-trainingevent-' . $request->file('pdf_file')->getClientOriginalName();
             $filePath = $request->file('pdf_file')->storeAs('uploads/trainingevents', $fileName, 'public');

@@ -27,9 +27,8 @@
                @endif
             </div>
             <div class="card-block">
-                <form action="{{ route('study.update', $detail->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('study.update', encrypt($detail->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Topics') }}</label>
                         <div class="col-sm-10">
@@ -42,14 +41,14 @@
                         </div>
                     </div>
 
-                    @if ($detail->category_id )
+                    @if ($detail->category_id)
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">{{ __('Detail Category') }}</label>
+                        <label class="col-sm-2 col-form-label">{{ __('Category') }}</label>
                         <div class="col-sm-10">
                             <select name="category_id" id="category_id" class="form-control @error('category_id') form-control-danger @enderror">
                                 <option value="" disabled>Select Category</option>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->category_id }}" @if($detail->category_id == $category->id) selected @endif>{{ $category->category_name }}</option>
+                                    <option value="{{ $category->id }}" @if($detail->category_id == $category->id) selected @endif>{{ $category->title }}</option>
                                 @endforeach
                             </select>
                             <span class="messages">

@@ -78,7 +78,7 @@ class RelivingController extends Controller
 
 
         $relieve = Relive::findOrFail(decrypt($id));
-        $categories = Relive::distinct()->pluck('category_id');
+        $categories = Relive::where('category_id', 0)->get();
         return view('backend.relieve.edit', compact('relieve', 'categories'));
     }
 
@@ -101,6 +101,7 @@ class RelivingController extends Controller
             $detail->category_id = $request->category_id;
         } else {
             $detail->category_id = 0;
+            $detail->pdf_file = null;
         }
         if ($request->hasFile('pdf_file')) {
             $fileName = time() . '-trainingevent-' . $request->file('pdf_file')->getClientOriginalName();

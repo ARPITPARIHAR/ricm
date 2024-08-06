@@ -24,7 +24,7 @@
                 @endif
             </div>
             <div class="card-block">
-                <form action="{{ route('trainingevent.update', encrypt($detail->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('trainingevent.update', encrypt($detail->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
 

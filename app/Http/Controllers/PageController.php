@@ -57,6 +57,12 @@ class PageController extends Controller
         return view('frontend.gallery');
     }
 
+    public function galleryDetail($slug)
+    {
+        $gallery = Page::where('slug', $slug)->first();
+        return view('frontend.gallery-detail', compact('gallery'));
+    }
+
     public function tenders(Request $request)
     {
         return view('frontend.tenders');

@@ -40,12 +40,11 @@
                                 <td>{{ ($key+1) + ($details->currentPage() - 1)*$details->perPage() }}</td>
                                 <td>
                                     @php
-                                        $images = json_decode($detail->thumbnail_img,true);
+                                        $images = json_decode($detail->image_paths,true);
                                     @endphp
                                     <img src="{{ asset($images[0] ?? '') }}" width="100">
                                 </td>
                                 <td>
-                                    @dd($images)
                                     {{ count($images) }}
                                 </td>
                                 <td>{{ $detail->title }}</td>

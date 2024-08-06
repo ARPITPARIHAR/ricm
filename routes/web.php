@@ -29,6 +29,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('infastructure', 'infastructure')->name('infastructure');
     Route::get('contact-us', 'contact_us')->name('contact-us');
     Route::get('gallery', 'gallery')->name('gallery');
+    Route::get('gallery-detail/{slug}', 'galleryDetail')->name('gallery.detail');
     Route::get('tenders', 'tenders')->name('tenders');
     Route::get('placement-service', 'placementservice')->name('placementservice');
     Route::get('abouts', 'about')->name('abouts');

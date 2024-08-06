@@ -70,7 +70,7 @@ class StudyController extends Controller
      */
     public function edit($id)
     {
-        $detail = Study::findOrFail($id);
+        $detail = Study::findOrFail(decrypt($id));
         $categories = Study::where('category_id', 0)->get();
         return view('backend.study.edit', compact('detail', 'categories'));
     }
@@ -93,6 +93,7 @@ class StudyController extends Controller
             $detail->category_id = $request->category_id;
         } else {
             $detail->category_id = 0;
+            $detail->pdf_file = null;
         }
         if ($request->hasFile('pdf_file')) {
             $fileName = time() . '-trainingevent-' . $request->file('pdf_file')->getClientOriginalName();

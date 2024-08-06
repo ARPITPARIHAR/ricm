@@ -12,24 +12,19 @@
 
             @foreach(\App\Models\Gallery::all() as $item)
                 <div class="col-lg-3">
-                    <div class="glry_box">
-                        @php
-                            $images = json_decode($item->image_paths);
-                        @endphp
-                        @if($images && count($images) > 0)
-                            <!-- Display the first image initially -->
-                            <a class="example-image-link" href="{{ asset($images[0]) }}" data-lightbox="gallery-set-{{ $item->id }}">
+                    <a href="{{ route('gallery.detail', $item->slug) }}">
+                        <div class="glry_box">
+                            @php
+                                $images = json_decode($item->image_paths);
+                            @endphp
+                            @if($images && count($images) > 0)
                                 <div class="glry_imag">
                                     <img class="example-image" src="{{ asset($images[0]) }}" alt="{{ $item->title }}" />
                                 </div>
-                            </a>
-                            <!-- Display the rest of the images hidden but in the same lightbox set -->
-                            @foreach(array_slice($images, 1) as $image)
-                                <a class="example-image-link d-none" href="{{ asset($image) }}" data-lightbox="gallery-set-{{ $item->id }}"></a>
-                            @endforeach
-                        @endif
-                        <h4>{{ $item->title }}</h4>
-                    </div>
+                            @endif
+                            <h4>{{ $item->title }}</h4>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>

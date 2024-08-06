@@ -24,7 +24,7 @@
                 @endif
             </div>
             <div class="card-block">
-                <form action="{{ route('tenderservice.update', $tender->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('tenderservice.update', encrypt($tender->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
@@ -45,7 +45,7 @@
                                 <select name="category_id" id="category_id" class="form-control @error('category_id') form-control-danger @enderror">
                                     <option value="">Select Category</option>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}" @if($tender->category_id == $category->id)>{{ $category->title }}</option>
+                                        <option value="{{ $category->id }}" @if($tender->category_id == $category->id) selected @endif>{{ $category->title }}</option>
                                     @endforeach
                                 </select>
                                 <span class="messages">
