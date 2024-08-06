@@ -24,12 +24,12 @@
                @endsession
             </div>
             <div class="card-block">
-                <form action="{{ route('banner.edit',encrypt($banners->id)) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('banner.edit',encrypt($banner->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
                         <div class="col-sm-10">
-                            <input type="text" name="title" id="title" value="{{ old('title') ?? $banners->title }}" placeholder="{{ __('Enter Title') }}" class="form-control @error('title') form-control-danger @enderror">
+                            <input type="text" name="title" id="title" value="{{ old('title') ?? $banner->title }}" placeholder="{{ __('Enter Title') }}" class="form-control @error('title') form-control-danger @enderror">
                             @error('title')
                                 <p class="text-danger error">{{ $message }}</p>
                             @else
@@ -40,7 +40,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Brief Description') }}</label>
                         <div class="col-sm-10">
-                            <textarea name="brief_description" id="brief_description" placeholder="{{ __('Enter Brief Description') }}" class="form-control @error('brief_description') form-control-danger @enderror">{{ old('brief_description') ?? $banners->brief_description }}</textarea>
+                            <textarea name="brief_description" id="brief_description" placeholder="{{ __('Enter Brief Description') }}" class="form-control @error('brief_description') form-control-danger @enderror">{{ old('brief_description') ?? $banner->brief_description }}</textarea>
                             @error('brief_description')
                                 <p class="text-danger error">{{ $message }}</p>
                             @else
