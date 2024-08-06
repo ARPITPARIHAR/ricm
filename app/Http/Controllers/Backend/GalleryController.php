@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
@@ -64,17 +65,30 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'thumbnail_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate multiple images
         ]);
 
         $detail = Gallery::findOrFail(decrypt($id));
+        $imagePaths = array();
+        if ($request->hasFile('images')) {
+            $imagePaths = [];
+            foreach ($request->file('images') as $image) {
+                // Generate a unique file name
+                $fileName = time() . '-' . $image->getClientOriginalName();
+                // Store the image
+                $filePath = $image->storeAs('uploads/images', $fileName, 'public');
+                // Save the image path
+                $imagePaths[] = '/public/storage/' . $filePath;
+            }
+            // Store the image paths in the database (as JSON)
 
-        if ($request->hasFile('thumbnail_img')) {
-            $fileName = time() . '-team-' . $request->file('thumbnail_img')->getClientOriginalName();
-            $filePath = $request->file('thumbnail_img')->storeAs('uploads/visions', $fileName, 'public');
-            $detail->thumbnail_img = '/public/storage/' . $filePath;
         }
-
+        if ($request->old_images) {
+            foreach ($request->old_images as $key => $image) {
+                $imagePaths[] = $image;
+            }
+        }
+        $detail->image_paths = json_encode($imagePaths);
         $detail->title = $request->title;
         $detail->save();
 

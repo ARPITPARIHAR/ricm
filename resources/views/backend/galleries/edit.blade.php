@@ -26,7 +26,6 @@
             <div class="card-block">
                 <form action="{{ route('galleries.update', encrypt($detail->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Thumbnail Image') }}</label>
                         <div class="col-sm-10">
@@ -61,6 +60,7 @@
                                     <label class="col-sm-2 col-form-label">{{ __('Existing Image') }}</label>
                                     <div class="col-sm-8">
                                         <img src="{{ asset($image) }}" alt="{{ $detail->title }}" class="img-thumbnail" width="150">
+                                        <input type="hidden" name="old_images[]" value="{{ $image }}">
                                     </div>
                                     <div class="col-sm-2">
                                         <button type="button" class="btn btn-danger remove-image">{{ __('Remove') }}</button>
