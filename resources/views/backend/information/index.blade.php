@@ -40,7 +40,7 @@
                                 <td>{{ ($key+1) + ($clients->currentPage() - 1)*$clients->perPage() }}</td>
                                 <td>{{ $client->title }}</td>
                                 <td><img src="{{ asset($client->logo) }}" width="90"></td>
-                                <td>{{ $client->Hyperlink }}</td>
+                                <td>{{ $client->hyperlink }}</td>
                                 <td>{{ date('d-m-Y h:iA',strtotime($client->updated_at)) }}</td>
                                 <td>
                                     <a href="{{ route('information.edit',encrypt($client->id)) }}" class="btn btn-sm btn-primary">{{ __('Edit') }}</a>
