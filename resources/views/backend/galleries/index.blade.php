@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Gallery'))
+@section('meta_title',__('Galleries'))
 
-@section('page_name',__('Gallery'))
+@section('page_name',__('Galleries'))
 
-@section('page_description',__('Gallery'))
+@section('page_description',__('Galleries'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Gallery') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Galleries') }}</a>
     </li>
 @endsection
 @section('content')
@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('galleries.create') }}" class="btn btn-sm btn-primary">{{ __('Add Gallery Detail') }}</a>
+                    <a href="{{ route('galleries.create') }}" class="btn btn-sm btn-primary">{{ __('Add Gallery') }}</a>
                 </div>
             </div>
             <div class="card-block">

@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Add Banner'))
+@section('meta_title',__('Banners'))
 
-@section('page_name',__('Add Banner'))
+@section('page_name',__('Banners'))
 
-@section('page_description',__('Add Banner'))
+@section('page_description',__('Banner'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Add Banner') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Banners') }}</a>
     </li>
 @endsection
 @section('content')
@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('banner.create') }}" class="btn btn-sm btn-primary">{{ __('Add Banner') }}</a>
+                    <a href="{{ route('banner.create') }}" class="btn btn-sm btn-primary">{{ __('Banners') }}</a>
                 </div>
             </div>
             <div class="card-block">
@@ -41,8 +41,6 @@
                                 <td>{{ $banner->title }}</td>
                                 <td>{{ $banner->hyperlink }}</td>
                                 <td><img src="{{ asset($banner->thumbnail_img) }}" width="90"></td>
-
-
                                 <td>{{ date('d-m-Y h:iA',strtotime($banner->updated_at)) }}</td>
                                 <td>
                                     <a href="{{ route('banner.edit',encrypt($banner->id)) }}" class="btn btn-sm btn-primary">{{ __('Edit') }}</a>

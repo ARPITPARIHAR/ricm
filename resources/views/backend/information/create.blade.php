@@ -26,7 +26,41 @@
             <div class="card-block">
                 <form action="{{ route('information.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="title" id="title" value="{{ old('title')}}" placeholder="{{ __('Enter Page Title') }}" class="form-control @error('title') form-control-danger @enderror">
+                           <span class="messages">
+                                @error('title')
+                                    <p class="text-danger error">{{ $message }}</p>
+                                @else
+                                    <p class="text-muted">{{ __('If you want to give a title other than your name then') }}</p>
+                                @enderror
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">{{ __('Brief Description') }}</label>
+                        <div class="col-sm-10">
+                            <textarea name="brief_description" id="brief_description" placeholder="{{ __('Enter Brief Description') }}" class="form-control @error('brief_description') form-control-danger @enderror">{{ old('brief_description')}}</textarea>
+                            @error('brief_description')
+                                <p class="text-danger error">{{ $message }}</p>
+                            @else
+                                <p class="text-muted">{{ __('') }}</p>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">{{ __('Hyperlink') }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="hyperlink" id="hyperlink" value="{{ old('hyperlink')}}" placeholder="{{ __('Enter Hyperlink') }}" class="form-control @error('hyperlink') form-control-danger @enderror">
+                            @error('hyperlink')
+                            <p class="text-danger error">{{ $message }}</p>
+                            @else
+                            <p class="text-muted">{{ __('') }}</p>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">{{ __('Information Logo') }}</label>
                         <div class="col-sm-10">

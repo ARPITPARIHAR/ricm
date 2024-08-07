@@ -1,16 +1,16 @@
 @extends('backend.layouts.app')
 
-@section('meta_title', __('Upcoming Training Programme'))
+@section('meta_title', __('Events & Programmes'))
 
-@section('page_name', __('Upcoming Training Programme'))
+@section('page_name', __('Events & Programmes'))
 
-@section('page_description', __('Upcoming Training Programme'))
+@section('page_description', __('Events  & Programmes'))
 
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Upcoming Training Programme') }}</a></li>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Events  & Programmes') }}</a></li>
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('upcoming.create') }}" class="btn btn-sm btn-primary">{{ __('Add Upcoming Training Programme') }}</a>
+                    <a href="{{ route('upcoming.create') }}" class="btn btn-sm btn-primary">{{ __('Add Event & Programme') }}</a>
                 </div>
             </div>
             <div class="card-block">

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
-@section('meta_title', __('Edit Study'))
-@section('page_name', __('Edit Study'))
+@section('meta_title', __('Edit Study Materials'))
+@section('page_name', __('Edit Study Materials'))
 @section('page_description', __('Edit the details of the study topic'))
 
 @section('name')
@@ -9,9 +9,9 @@
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{ route('study.index') }}">{{ __('Study') }}</a>
+        <a href="{{ route('study.index') }}">{{ __('Study Materials') }}</a>
     </li>
-    <li class="breadcrumb-item active">{{ __('Edit Study') }}</li>
+    <li class="breadcrumb-item active">{{ __('Edit Study Materials') }}</li>
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
                 <form action="{{ route('study.update', encrypt($detail->id)) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">{{ __('Topics') }}</label>
+                        <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
                         <div class="col-sm-10">
                             <input type="text" name="title" id="title" value="{{ old('title', $detail->title) }}" placeholder="{{ __('Enter Topic') }}" class="form-control @error('title') form-control-danger @enderror">
                             <span class="messages">

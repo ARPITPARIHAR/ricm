@@ -33,11 +33,16 @@ class InformationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
+            'title' => 'required|string',
+            'brief_description' => 'nullable|string',
+            'hyperlink' => 'nullable|url', // Validate the hyperlink
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $client = new Information;
 
+        $client->title = $request->title;
+        $client->brief_description = $request->brief_description;
+        $client->hyperlink = $request->input('hyperlink'); // Save the hyperlink
         if ($request->hasFile('logo')) {
             $fileName = time() . '-logo-' . $request->file('logo')->getClientOriginalName();
             $filePath = $request->file('logo')->storeAs('uploads/clients', $fileName, 'public');
@@ -72,11 +77,16 @@ class InformationController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-
+            'title' => 'required|string',
+            'brief_description' => 'nullable|string',
+            'hyperlink' => 'nullable|url', // Validate the hyperlink
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $client = Information::findOrFail(decrypt($id));
 
+        $client->title = $request->title;
+        $client->brief_description = $request->brief_description;
+        $client->hyperlink = $request->input('hyperlink'); // Save the hyperlink
         if ($request->hasFile('logo')) {
             $fileName = time() . '-logo-' . $request->file('logo')->getClientOriginalName();
             $filePath = $request->file('logo')->storeAs('uploads/clients', $fileName, 'public');

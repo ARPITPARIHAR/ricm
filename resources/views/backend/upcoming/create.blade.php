@@ -1,15 +1,15 @@
 
 @extends('backend.layouts.app')
-@section('meta_title',__('Add Upcoming Training Programme'))
+@section('meta_title',__('Add Event'))
 
-@section('page_name',__('Add Upcoming Training Programme'))
+@section('page_name',__('Add Event'))
 
-@section('page_description',__('Add Upcoming Training Programme'))
+@section('page_description',__('Add Event'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Add Upcoming Training Programme') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Add Event') }}</a>
     </li>
 @endsection
 @section('content')

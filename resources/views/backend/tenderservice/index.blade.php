@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('TenderService'))
+@section('meta_title',__('Add Tender'))
 
-@section('page_name',__('TenderService'))
+@section('page_name',__('Add Tender'))
 
-@section('page_description',__('TenderService'))
+@section('page_description',__('Add Tender'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('TenderService') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Add Tender') }}</a>
     </li>
 @endsection
 @section('content')
@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('tenderservice.create') }}" class="btn btn-sm btn-primary">{{ __('Add Tenderservice Detail') }}</a>
+                    <a href="{{ route('tenderservice.create') }}" class="btn btn-sm btn-primary">{{ __('Add Tenders') }}</a>
                 </div>
             </div>
             <div class="card-block">

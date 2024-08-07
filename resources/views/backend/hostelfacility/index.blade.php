@@ -1,15 +1,15 @@
 @extends('backend.layouts.app')
-@section('meta_title', __('Hostel Facility'))
+@section('meta_title', __('Hostel Facilities'))
 
-@section('page_name', __('Hostel Facility'))
+@section('page_name', __('Hostel Facilities'))
 
-@section('page_description', __('Hostel Facility'))
+@section('page_description', __('Hostel Facilities'))
 
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Hostel Facility') }}</a></li>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Hostel Facilities') }}</a></li>
 @endsection
 
 @section('content')

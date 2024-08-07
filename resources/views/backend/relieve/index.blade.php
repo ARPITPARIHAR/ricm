@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('relieve.create') }}" class="btn btn-sm btn-primary">{{ __('Add Reliving Orders Detail') }}</a>
+                    <a href="{{ route('relieve.create') }}" class="btn btn-sm btn-primary">{{ __('Add Reliving Order') }}</a>
                 </div>
             </div>
             <div class="card-block">

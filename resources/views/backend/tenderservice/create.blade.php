@@ -1,15 +1,15 @@
 @extends('backend.layouts.app')
-@section('meta_title', __('Tenders'))
+@section('meta_title', __('Add Tender'))
 
-@section('page_name', __('Tenders'))
+@section('page_name', __('Add Tender'))
 
-@section('page_description', __('Tenders'))
+@section('page_description', __('Add Tender'))
 
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Tenders') }}</a></li>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Add Tender') }}</a></li>
 @endsection
 
 @section('content')

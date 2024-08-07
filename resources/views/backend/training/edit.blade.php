@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Client Training'))
+@section('meta_title',__('Edit Training'))
 
-@section('page_name',__('Client Training'))
+@section('page_name',__('Edit Training'))
 
-@section('page_description',__('Client Training'))
+@section('page_description',__('Edit Training'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Client Training') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Edit Training') }}</a>
     </li>
 @endsection
 @section('content')

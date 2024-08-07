@@ -1,14 +1,14 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Study'))
+@section('meta_title',__('Study Materials'))
 
-@section('page_name',__('Study'))
+@section('page_name',__('Study Materials'))
 
-@section('page_description',__('Study'))
+@section('page_description',__('Study Materials'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Study') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Study Materials') }}</a>
     </li>
 @endsection
 @section('content')
@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col-sm-2">
-                    <a href="{{ route('study.create') }}" class="btn btn-sm btn-primary">{{ __('Add Study Topics') }}</a>
+                    <a href="{{ route('study.create') }}" class="btn btn-sm btn-primary">{{ __('Add Study Materials') }}</a>
                 </div>
             </div>
             <div class="card-block">

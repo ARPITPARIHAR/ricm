@@ -1,16 +1,16 @@
 @extends('backend.layouts.app')
 
-@section('meta_title', __('Contacts'))
+@section('meta_title', __('Contact Queries'))
 
-@section('page_name', __('Contacts'))
+@section('page_name', __('Contact Queries'))
 
-@section('page_description', __('List of Contacts'))
+@section('page_description', __('Contact Queries'))
 
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Contacts') }}</a></li>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Contact Queries') }}</a></li>
 @endsection
 
 @section('content')

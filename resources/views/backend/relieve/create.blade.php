@@ -1,14 +1,12 @@
 @extends('backend.layouts.app')
-@section('meta_title',__('Reliving Orders'))
-
-@section('page_name',__('Reliving Orders'))
-
-@section('page_description',__('Reliving Orders'))
+@section('meta_title',__('Add Reliving Orders'))
+@section('page_name',__('Add Reliving Orders'))
+@section('page_description',__('Add Reliving Orders'))
 @section('name')
     <li class="breadcrumb-item">
         <a href="{{ route('dashboard') }}"> <i class="feather icon-home"></i> </a>
     </li>
-    <li class="breadcrumb-item"><a href="#!">{{ __('Reliving Orders') }}</a>
+    <li class="breadcrumb-item"><a href="#!">{{ __('Add Reliving Orders') }}</a>
     </li>
 @endsection
 @section('content')
