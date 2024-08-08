@@ -50,11 +50,11 @@
 						<button type="button" class="button">Subscribe</button>
 					</form>
 					<ul class="ftr_scl">
-						<li><a href="#"><img src="{{ asset('images/scl001.png') }}" alt="scl"></a></li>
-						<li><a href="#"><img src="{{ asset('images/scl001.png') }}" alt="scl"></a></li>
-						<li><a href="#"><img src="{{ asset('images/scl001.png') }}" alt="scl"></a></li>
-						<li><a href="#"><img src="{{ asset('images/scl001.png') }}" alt="scl"></a></li>
-						<li><a href="#"><img src="{{ asset('images/scl001.png') }}" alt="scl"></a></li>
+						<li><a href="#"><img src="{{ ('images/scl001.png') }}" alt="scl"></a></li>
+						<li><a href="#"><img src="{{ ('images/scl002.png') }}" alt="scl"></a></li>
+						<li><a href="#"><img src="{{ ('images/scl003.png') }}" alt="scl"></a></li>
+						<li><a href="#"><img src="{{ ('images/scl004.png') }}" alt="scl"></a></li>
+						<li><a href="#"><img src="{{ ('images/scl005.png') }}" alt="scl"></a></li>
 					<ul>
 				</div>
 			</div>
