@@ -50,11 +50,11 @@
 						<button type="button" class="button">Subscribe</button>
 					</form>
 					<ul class="ftr_scl">
-						<li><a href="{{ businessSetting(1)->facebook ? businessSetting(1)->facebook : '#' }}"><img src="{{ ('images/scl001.png') }}" alt="facebook"></a></li>
-						<li><a href="{{ businessSetting(1)->linked_in ? businessSetting(1)->linked_in : '#' }}"><img src="{{ ('images/scl002.png') }}" alt="linkedin"></a></li>
-						<li><a href="{{ businessSetting(1)->instagram ? businessSetting(1)->instagram : '#'  }}"><img src="{{ ('images/scl003.png') }}" alt="instagram"></a></li>
-						<li><a href="{{ businessSetting(1)->twitter ? businessSetting(1)->twitter : '#' }}"><img src="{{ ('images/scl004.png') }}" alt="twitter"></a></li>
-						<li><a href="{{ businessSetting(1)->youtube ? businessSetting(1)->youtube : '#' }}"><img src="{{ ('images/scl005.png') }}" alt="youtube"></a></li>
+						<li><a href="{{ businessSetting(1)->facebook ? businessSetting(1)->facebook : '#' }}" target="_blank"><img src="{{ ('images/scl001.png') }}" alt="facebook"></a></li>
+						<li><a href="{{ businessSetting(1)->linked_in ? businessSetting(1)->linked_in : '#' }}" target="_blank"><img src="{{ ('images/scl002.png') }}" alt="linkedin"></a></li>
+						<li><a href="{{ businessSetting(1)->instagram ? businessSetting(1)->instagram : '#'  }}" target="_blank"><img src="{{ ('images/scl003.png') }}" alt="instagram"></a></li>
+						<li><a href="{{ businessSetting(1)->twitter ? businessSetting(1)->twitter : '#' }}" target="_blank"><img src="{{ ('images/scl004.png') }}" alt="twitter"></a></li>
+						<li><a href="{{ businessSetting(1)->youtube ? businessSetting(1)->youtube : '#' }}" target="_blank"><img src="{{ ('images/scl005.png') }}" alt="youtube"></a></li>
 					<ul>
 				</div>
 			</div>

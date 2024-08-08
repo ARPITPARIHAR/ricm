@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Backend;
 
 
@@ -32,6 +33,10 @@ class DashboardController extends Controller
             'brief_description' => 'required|string',
             'instagram' => 'nullable|url',
             'linked_in' => 'nullable|url',
+            'facebook' => 'nullable|url',
+            'twitter' => 'nullable|url',
+            'youtube' => 'nullable|url',
+            'whatsapp' => 'nullable|string',
             'header_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'footer_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'admin_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -44,6 +49,10 @@ class DashboardController extends Controller
         $business_info->brief_description = $request->brief_description;
         $business_info->instagram = $request->instagram ?? '#';
         $business_info->linked_in = $request->linked_in ?? '#';
+        $business_info->facebook = $request->facebook ?? '#';
+        $business_info->twitter = $request->twitter ?? '#';
+        $business_info->youtube = $request->youtube ?? '#';
+        $business_info->whatsapp = $request->whatsapp ?? NULL;
         if ($request->hasFile('header_logo')) {
             $fileName = time() . '-header-logo-' . $request->file('header_logo')->getClientOriginalName();
             $filePath = $request->file('header_logo')->storeAs('uploads/logos', $fileName, 'public');
@@ -93,7 +102,4 @@ class DashboardController extends Controller
         $profile->update();
         return back()->with('success', 'Profile updated Successfully.');
     }
-
-
-
 }

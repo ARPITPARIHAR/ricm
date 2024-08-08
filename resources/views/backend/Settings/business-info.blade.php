@@ -129,6 +129,39 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">{{ __('Facebook') }}</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="facebook" id="facebook" value="{{ old('facebook') ?? $business_info->facebook }}" placeholder="{{ __('Enter Linked In') }}" class="form-control @error('facebook') form-control-danger @enderror">
+                                @error('facebook')
+                                    <p class="text-danger error">{{ $message }}</p>
+                                @else
+                                    <p class="text-muted">{{ __('') }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">{{ __('Twitter') }}</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="twitter" id="twitter" value="{{ old('twitter') ?? $business_info->twitter }}" placeholder="{{ __('Enter Linked In') }}" class="form-control @error('twitter') form-control-danger @enderror">
+                                @error('twitter')
+                                    <p class="text-danger error">{{ $message }}</p>
+                                @else
+                                    <p class="text-muted">{{ __('') }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">{{ __('Youtube') }}</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="youtube" id="youtube" value="{{ old('youtube') ?? $business_info->youtube }}" placeholder="{{ __('Enter Linked In') }}" class="form-control @error('youtube') form-control-danger @enderror">
+                                @error('youtube')
+                                    <p class="text-danger error">{{ $message }}</p>
+                                @else
+                                    <p class="text-muted">{{ __('') }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label">{{ __('Brief Description') }}</label>
                             <div class="col-sm-10">
                                 <textarea name="brief_description" id="brief_description" placeholder="{{ __('Enter Brief Description') }}" class="form-control @error('brief_description') form-control-danger @enderror">{{ old('brief_description') ?? $business_info->brief_description }}</textarea>
